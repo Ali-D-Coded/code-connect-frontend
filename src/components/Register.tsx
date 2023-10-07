@@ -3,17 +3,6 @@ import React from "react";
 
 const { Option } = Select;
 
-const formItemLayout = {
-  labelCol: {
-    xs: { span: 24 },
-    sm: { span: 8 },
-  },
-  wrapperCol: {
-    xs: { span: 24 },
-    sm: { span: 16 },
-  },
-};
-
 const tailFormItemLayout = {
   wrapperCol: {
     xs: {
@@ -46,13 +35,12 @@ const Register: React.FC = () => {
   return (
     // <div className="p-5 bg-white border border-1">
     <Form
-      className="p-5 bg-white border border-black rounded-md w-[400px]"
-      {...formItemLayout}
+      className="p-5 bg-white border border-black rounded-md "
       layout="vertical"
       form={form}
       name="register"
       onFinish={onFinish}
-      style={{ maxWidth: 600 }}
+      style={{ maxWidth: 400 }}
       scrollToFirstError
     >
       <Form.Item
@@ -130,13 +118,15 @@ const Register: React.FC = () => {
                 : Promise.reject(new Error("Should accept agreement")),
           },
         ]}
-        {...tailFormItemLayout}
+        // {...tailFormItemLayout}
       >
         <Checkbox>
           I have read the <a href="">agreement</a>
         </Checkbox>
       </Form.Item>
-      <Form.Item {...tailFormItemLayout}>
+      <Form.Item
+      // {...tailFormItemLayout}
+      >
         <Button className="bg-blue-500" type="primary" htmlType="submit">
           Register
         </Button>
