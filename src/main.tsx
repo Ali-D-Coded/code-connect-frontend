@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import Auth from "./pages/Auth";
+import Auth from "./pages/auth/Auth";
+import { GolobalProvider } from "./context/GlobalContext";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GolobalProvider>
+      <RouterProvider router={router} />
+    </GolobalProvider>
   </React.StrictMode>
 );

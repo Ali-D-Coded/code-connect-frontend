@@ -1,0 +1,15 @@
+.ant-tabs-nav-wrap {
+  display: flex !important;
+  justify-content: center !important;
+
+  .ant-tabs-nav-list {
+    .ant-tabs-tab {
+      width: 100px !important;
+      display: flex !important;
+      justify-content: center !important;
+      @media (min-width: 580px) {
+        width: 100px !important;
+      }
+    }
+  }
+}

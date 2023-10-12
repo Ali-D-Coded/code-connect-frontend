@@ -25,7 +25,7 @@ function App() {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   return (
-    <div className="relative flex h-screen gap-3 bg-slate-100">
+    <div className="relative flex h-screen  bg-slate-100">
       <aside
         className={
           openMenu
@@ -66,9 +66,14 @@ function App() {
           </ul>
         </nav>
       </aside>
-      <div>
-        <Outlet />
-      </div>
+      <section className="w-full">
+        <nav className="bg-slate-200 h-10 w-full">
+          <div>Logo</div>
+        </nav>
+        <div>
+          <Outlet />
+        </div>
+      </section>
       <div
         className="fixed w-10 h-10 overflow-auto bg-red-300 rounded-full bottom-5 right-5 md:hidden"
         onClick={() => {

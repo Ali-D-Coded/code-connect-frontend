@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input, Select } from "antd";
+import { Button, Checkbox, Col, Form, Input, Row, Select } from "antd";
 import React from "react";
 
 const { Option } = Select;
@@ -35,17 +35,60 @@ const Register: React.FC = () => {
   return (
     // <div className="p-5 bg-white border border-1">
     <Form
-      className="p-5 bg-white border border-black rounded-md "
+      className="p-5 bg-white shadow-lg rounded-md "
       layout="vertical"
       form={form}
       name="register"
       onFinish={onFinish}
-      style={{ maxWidth: 400 }}
+      style={{ maxWidth: 800 }}
       scrollToFirstError
     >
+      <Row gutter={3}>
+        <Col>
+          <Form.Item
+            name="firstName"
+            label="First Name"
+            hasFeedback
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+        </Col>
+        <Col>
+          <Form.Item
+            name="lastName"
+            label="Last Name"
+            hasFeedback
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+        </Col>
+      </Row>
+      <Form.Item
+        name="username"
+        label="Username"
+        hasFeedback
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
       <Form.Item
         name="email"
         label="E-mail"
+        hasFeedback
         rules={[
           {
             type: "email",
@@ -102,7 +145,15 @@ const Register: React.FC = () => {
       <Form.Item
         name="phone"
         label="Phone Number"
-        rules={[{ required: true, message: "Please input your phone number!" }]}
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            // message: "Please input your phone number!",
+            max: 12,
+            min: 10,
+          },
+        ]}
       >
         <Input addonBefore={prefixSelector} style={{ width: "100%" }} />
       </Form.Item>
